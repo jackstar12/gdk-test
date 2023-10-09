@@ -145,12 +145,5 @@ func (wallet *Wallet) Login(mnemonic string) error {
 		return err
 	}
 	fmt.Println("logged in: ", res)
-
-	details, err := toJson(map[string]int{"subaccount": 0, "num_confs": 0})
-	balance, err := withAuthhandler(C.GA_get_balance(wallet.session, details, &handler), "balance", handler)
-	if err != nil {
-		return err
-	}
-	fmt.Println("balance: ", balance)
 	return nil
 }
