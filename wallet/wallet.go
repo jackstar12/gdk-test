@@ -2,7 +2,7 @@ package wallet
 
 /*
 #cgo CFLAGS: -I${SRCDIR}/include/
-#cgo LDFLAGS: ${SRCDIR}/lib/libgreenaddress_full.a
+#cgo LDFLAGS: -lstdc++ ${SRCDIR}/lib/libgreenaddress_full.a
 #include "gdk.h"
 #include "stdio.h"
 #include "stdlib.h"
