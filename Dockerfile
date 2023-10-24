@@ -12,8 +12,7 @@ RUN go mod download
 COPY . ./
 
 # Build
-RUN CGO_ENABLED=1 go build -o /valid valid/main.go
-RUN CGO_ENABLED=1 go build -o /invalid invalid/main.go
+RUN CGO_ENABLED=1 go build -o /example main.go
 
 # Run
-CMD ["/valid"]
+CMD ["/example"]
