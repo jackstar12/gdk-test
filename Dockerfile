@@ -14,9 +14,7 @@ COPY . ./
 FROM blockstream/gdk-ubuntu-builder:c59e04d07ba0b61e70883ab7fe8bbeb4795ca48c as gdk
 
 RUN git clone https://github.com/Blockstream/gdk --depth 1
-RUN cargo
-RUN cd gdk && ./tools/build.sh --gcc --buildtype release --no-deps-rebuild --external-deps-dir /prebuild/gcc --parallel 16
-
+RUN export PATH="/root/.cargo/bin:$PATH" && cd gdk && ./tools/build.sh --gcc --buildtype release --no-deps-rebuild --external-deps-dir /prebuild/gcc --parallel 1
 
 
 #RUN gdk/docker/debian/install_deps.sh && gdk/docker/debian/install_rust_tools.sh
